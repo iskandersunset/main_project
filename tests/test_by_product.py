@@ -27,6 +27,6 @@ def test_by_product():
 
     # Заполняем данные и жмем Continue
     cip = Client_information_page(driver)
-    cip.client_information_confirm()
+    cip.input_information()
 
     time.sleep(2)

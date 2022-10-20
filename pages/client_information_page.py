@@ -51,7 +51,7 @@ class Client_information_page(Base):
         print("Click Continue Button")
 
     # Methods =============================
-    def client_information_confirm(self):
+    def input_information(self):
         self.get_current_url()
         self.input_first_name("Ivan")
         self.input_last_name("Ivanov")
