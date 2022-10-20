@@ -34,15 +34,15 @@ class Client_information_page(Base):
 
     # Actions =============================
 
-    def init_first_name(self, first_name):
+    def input_first_name(self, first_name):
         self.get_first_name().send_keys(first_name)
         print("Input First Name: ", first_name)
 
-    def init_last_name(self, last_name):
+    def input_last_name(self, last_name):
         self.get_last_name().send_keys(last_name)
         print("Input Last Name: ", last_name)
 
-    def init_postal_code(self, postal_code):
+    def input_postal_code(self, postal_code):
         self.get_postal_code().send_keys(postal_code)
         print("Input Postal Code: ", postal_code)
 
@@ -53,9 +53,9 @@ class Client_information_page(Base):
     # Methods =============================
     def client_information_confirm(self):
         self.get_current_url()
-        self.init_first_name("Ivan")
-        self.init_last_name("Ivanov")
-        self.init_postal_code("454000")
+        self.input_first_name("Ivan")
+        self.input_last_name("Ivanov")
+        self.input_postal_code("454000")
         self.click_continue_button()
 
 
