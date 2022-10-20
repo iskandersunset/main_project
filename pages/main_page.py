@@ -14,6 +14,8 @@ class Main_page(Base):
     # Locators============================
 
     select_product_1 = "add-to-cart-sauce-labs-backpack"
+    select_product_2 = "add-to-cart-sauce-labs-bike-light"
+    select_product_3 = "add-to-cart-sauce-labs-bolt-t-shirt"
     cart = "shopping_cart_link"
     menu = "react-burger-menu-btn"
     link_about = "about_sidebar_link"
@@ -22,6 +24,12 @@ class Main_page(Base):
 
     def get_select_product_1(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.ID, self.select_product_1)))
+
+    def get_select_product_2(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.ID, self.select_product_2)))
+
+    def get_select_product_3(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.ID, self.select_product_3)))
 
     def get_cart(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, self.cart)))
@@ -37,6 +45,14 @@ class Main_page(Base):
         self.get_select_product_1().click()
         print("Click add to cart product_1")
 
+    def click_select_product_2(self):
+        self.get_select_product_2().click()
+        print("Click add to cart product_2")
+
+    def click_select_product_3(self):
+        self.get_select_product_3().click()
+        print("Click add to cart product_3")
+
     def click_cart(self):
         self.get_cart().click()
         print("Click cart icon")
@@ -50,9 +66,19 @@ class Main_page(Base):
         print("Click Link About")
 
     # Methods =============================
-    def select_product(self):
+    def select_products_1(self):
         self.get_current_url()
         self.click_select_product_1()
+        self.click_cart()
+
+    def select_products_2(self):
+        self.get_current_url()
+        self.click_select_product_2()
+        self.click_cart()
+
+    def select_products_3(self):
+        self.get_current_url()
+        self.click_select_product_3()
         self.click_cart()
 
     def select_menu_about(self):
