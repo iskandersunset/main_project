@@ -5,7 +5,7 @@ class Base():
 
     """Method Get current URL"""
 
-    def get_current_rl(self):
+    def get_current_url(self):
         get_url = self.driver.current_url
         print("Curent URL " + get_url)
 
