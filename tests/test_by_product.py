@@ -18,6 +18,8 @@ def test_by_product():
 
     login = Login_page(driver)
     login.authorization()
+
+    # Выбираем товар и кликаем по корзине
     mp = Main_page(driver)
     mp.select_product()
 
