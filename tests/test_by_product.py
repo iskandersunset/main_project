@@ -12,7 +12,7 @@ from pages.payment_page import Payment_page
 
 
 @pytest.mark.run(order=1)
-def test_by_product_1():
+def test_by_product_1(set_up):
     s = Service('C:/_teach/resource/chromedriver.exe')  # Путь на работе
     driver = webdriver.Chrome(service=s)
 
@@ -29,23 +29,23 @@ def test_by_product_1():
     cp = Cart_page(driver)
     cp.product_confirmation()
 
-    # # Заполняем данные и жмем Continue
-    # cip = Client_information_page(driver)
-    # cip.input_information()
-    #
-    # # Жмем финиш
-    # p = Payment_page(driver)
-    # p.payment()
+    # Заполняем данные и жмем Continue
+    cip = Client_information_page(driver)
+    cip.input_information()
 
-    # s = Finish_page(driver)
-    # s.finish()
+    # Жмем финиш
+    p = Payment_page(driver)
+    p.payment()
+
+    s = Finish_page(driver)
+    s.finish()
 
     print('FINISH TEST 1')
     time.sleep(2)
 
 
 @pytest.mark.run(order=3)
-def test_by_product_2():
+def test_by_product_2(set_up):
     s = Service('C:/_teach/resource/chromedriver.exe')  # Путь на работе
     driver = webdriver.Chrome(service=s)
 
@@ -67,7 +67,7 @@ def test_by_product_2():
 
 
 @pytest.mark.run(order=2)
-def test_by_product_3():
+def test_by_product_3(set_up):
     s = Service('C:/_teach/resource/chromedriver.exe')  # Путь на работе
     driver = webdriver.Chrome(service=s)
 
