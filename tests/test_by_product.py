@@ -21,10 +21,11 @@ def test_by_product():
     mp = Main_page(driver)
     mp.select_product()
 
-    # Выбираем товар и кликаем по корзине
+    # Жмем кнопку Checkout
     cp = Cart_page(driver)
     cp.product_confirmation()
 
+    # Заполняем данные и жмем Continue
     cip = Client_information_page(driver)
     cip.client_information_confirm()
 
