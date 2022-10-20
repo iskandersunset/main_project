@@ -16,6 +16,7 @@ class Main_page(Base):
     select_product_1 = "add-to-cart-sauce-labs-backpack"
     cart = "shopping_cart_link"
     menu = "react-burger-menu-btn"
+    link_about = "about_sidebar_link"
 
     # Getters=============================
 
@@ -28,6 +29,9 @@ class Main_page(Base):
     def get_menu(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.ID, self.menu)))
 
+    def get_link_about(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.ID, self.link_about)))
+
     # Actions =============================
     def click_select_product_1(self):
         self.get_select_product_1().click()
@@ -39,7 +43,11 @@ class Main_page(Base):
 
     def click_menu(self):
         self.get_menu().click()
-        print("Click cart icon")
+        print("Click menu")
+
+    def click_link_about(self):
+        self.get_link_about().click()
+        print("Click Link About")
 
     # Methods =============================
     def select_product(self):
@@ -50,3 +58,5 @@ class Main_page(Base):
     def select_menu_about(self):
         self.get_current_url()
         self.click_menu()
+        self.click_link_about()
+        self.assert_url('https://saucelabs.com/')
