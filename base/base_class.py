@@ -1,3 +1,6 @@
+import datetime
+
+
 class Base():
 
     def __init__(self, driver):
@@ -15,3 +18,13 @@ class Base():
         value_word = word.text
         assert value_word == result
         print("Good value WORD")
+
+    """Method Screenshot"""
+
+    def get_screenshot(self):
+        now_date = datetime.datetime.utcnow().strftime("%y.%m.%d.%H.%M.%S")
+        name_screenshot = 'screenshot' + now_date + '.png'
+        self.driver.save_screenshot('C:\\Python\\main_project\\screen\\' + name_screenshot)
+
+
+
