@@ -21,3 +21,4 @@ class Finish_page(Base):
     def finish(self):
         self.get_current_url()
         self.get_screenshot()
+        self.assert_url('https://www.saucedemo.com/checkout-complete.html')

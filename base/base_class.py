@@ -26,5 +26,9 @@ class Base():
         name_screenshot = 'screenshot' + now_date + '.png'
         self.driver.save_screenshot('C:\\Python\\main_project\\screen\\' + name_screenshot)
 
+    """Method Assert word"""
 
-
+    def assert_url(self, result):
+        get_url = self.driver.current_url
+        assert get_url == result
+        print("Good value URL")

@@ -36,6 +36,6 @@ def test_by_product():
     p.payment()
 
     s = Finish_page(driver)
-    s.get_screenshot()
+    s.finish()
 
     time.sleep(2)
