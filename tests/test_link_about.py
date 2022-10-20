@@ -21,6 +21,6 @@ def test_link_about():
 
     # Выбираем товар и кликаем по корзине
     mp = Main_page(driver)
-    mp.select_product()
+    mp.select_menu_about()
 
     time.sleep(2)
