@@ -26,6 +26,6 @@ class Cart_page(Base):
         print("Click add to cart product_1")
 
     # Methods =============================
-    def select_product(self):
+    def product_confirmation(self):
         self.get_current_url()
         self.click_checkout_button()
