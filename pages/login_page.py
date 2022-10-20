@@ -17,6 +17,7 @@ class Login_page(Base):
     user_name = "user-name"
     user_pass = "password"
     login_button = "login-button"
+    main_word = "title"
 
     # Getters=============================
 
@@ -28,6 +29,9 @@ class Login_page(Base):
 
     def get_login_button(self):
         return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.ID, self.login_button)))
+
+    def get_main_word(self):
+        return WebDriverWait(self.driver, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, self.main_word)))
 
     # Actions =============================
 
@@ -50,3 +54,5 @@ class Login_page(Base):
         self.init_user_name("standard_user")
         self.init_user_pass("secret_sauce")
         self.click_login_button()
+        self.assert_word(self.get_main_word(), 'PRODUCTS')
+
