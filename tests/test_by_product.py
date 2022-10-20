@@ -7,6 +7,7 @@ from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 from pages.login_page import Login_page
+from pages.main_page import Main_page
 
 
 def test_by_product():
@@ -17,9 +18,9 @@ def test_by_product():
 
     login = Login_page(driver)
     login.authorization()
+    mp = Main_page(driver)
+    mp.select_product()
 
-    button_cart = WebDriverWait(driver, 30).until(EC.element_to_be_clickable((By.CLASS_NAME, "shopping_cart_link")))
-    button_cart.click()
-    print('Кликнули по иконке корзины')
+
     time.sleep(5)
 
