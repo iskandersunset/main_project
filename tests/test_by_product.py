@@ -21,6 +21,4 @@ def test_by_product():
     mp = Main_page(driver)
     mp.select_product()
 
-
-    time.sleep(5)
-
+    time.sleep(2)

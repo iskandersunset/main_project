@@ -50,7 +50,7 @@ class Login_page(Base):
     # Methods =============================
     def authorization(self):
         self.driver.get(self.base_url)
-        self.get_current_rl()
+        self.get_current_url()
         self.init_user_name("standard_user")
         self.init_user_pass("secret_sauce")
         self.click_login_button()
